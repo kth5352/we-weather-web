@@ -1,0 +1,49 @@
+body {
+  font-family: "Single Day", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  width: 64%; /* 전체 width에서 양쪽 18%씩 빼면 64% */
+  margin: 0 auto; /* 가로 방향으로 중앙에 배치 */
+  height: 100%;
+}
+
+.left {
+  flex: 2;
+  background-size: cover;
+  background-position: center;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.weather-info {
+  margin-bottom: 20px;
+}
+
+.weather-info:last-child {
+  margin-bottom: 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+p {
+  margin: 5px 0;
+  font-size: 18px;
+}
