@@ -10,8 +10,7 @@ https://openweathermap.org/
 
 
 설치 및 실행 방법
-1. ![image](https://github.com/user-attachments/assets/7264c228-e91c-4a22-bd12-56f90821d5c5)
-   설치하려는 경로에 터미널(cmd 또는 power shell)을 연다.
+1. 설치하려는 경로에 터미널(cmd 또는 power shell)을 연다.
 2. git clone https://github.com/kth5352/we-weather-web.git
    을 입력한다.
 3. 파일 설치 후에는 npm install 을 입력한다.
