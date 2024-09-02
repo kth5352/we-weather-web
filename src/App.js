@@ -6,7 +6,7 @@ const coordinates = {
   Busan: { lat: 35.1796, lon: 129.0756 },
   Daegu: { lat: 35.8714, lon: 128.6014 },
   Daejeon: { lat: 36.3504, lon: 127.3845 },
-  Gwangju: { lat: 35.1595, lon: 126.8526 },
+  Gwangju: { lat: 35.1595454, lon: 126.8526012 },
   Jeju: { lat: 33.4996, lon: 126.5312 },
   Incheon: { lat: 37.4563, lon: 126.7052 },
   Dokdo: { lat: 37.2394, lon: 131.8683 },
@@ -51,7 +51,30 @@ function App() {
           ).then((response) => response.json())
         )
       );
-      setWeatherData(responses);
+
+      const updatedData = responses.map((data) => {
+        // Gwangju의 잘못된 이름을 수정
+        if (
+          data.name === "Yach’on" &&
+          data.coord.lat === 35.1595454 &&
+          data.coord.lon === 126.8526012
+        ) {
+          data.name = "Gwangju";
+        }
+
+        // 독도의 경우 이름을 수동으로 설정
+        if (
+          !data.name &&
+          data.coord.lat === 37.2394 &&
+          data.coord.lon === 131.8683
+        ) {
+          data.name = "Dokdo";
+        }
+
+        return data;
+      });
+
+      setWeatherData(updatedData);
     } catch (err) {
       setError("날씨 데이터를 가져오는데 실패했습니다.");
     }
