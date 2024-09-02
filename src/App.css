@@ -10,40 +10,62 @@ h1 {
 
 .container {
   display: flex;
-  width: 64%; /* 전체 width에서 양쪽 18%씩 빼면 64% */
-  margin: 0 auto; /* 가로 방향으로 중앙에 배치 */
-  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-.left {
-  flex: 2;
-  background-size: cover;
-  background-position: center;
+.weather-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.left img {
+  width: 100px;
+  height: 100px;
 }
 
 .right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-  background-color: #f0f0f0;
+  margin-left: 20px;
 }
 
-.weather-info {
-  margin-bottom: 20px;
-}
-
-.weather-info:last-child {
-  margin-bottom: 0;
-}
-
-h2 {
+.weather-info h2 {
   margin: 0;
+  font-size: 26px;
+}
+
+.weather-info p {
+  margin: 5px 0;
   font-size: 24px;
 }
 
-p {
-  margin: 5px 0;
-  font-size: 18px;
+.current-location-card {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.other-locations-container {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-container .weather-card {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.sub-container .weather-card:last-child {
+  margin-right: 0;
 }
